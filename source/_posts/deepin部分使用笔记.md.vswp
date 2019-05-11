@@ -1,3 +1,4 @@
+vnote_backup_file_826537664 /home/mzking/Desktop/shiqingk.github.io/source/_posts/deepin部分使用笔记.md
 ---
 title: deepin部分使用笔记  
 mathjax: true  
@@ -14,7 +15,7 @@ $ gsettings get org.gnome.desktop.background picture-uri
 ```
 $ gsettings set org.gnome.desktop.background picture-uri file:///home/mzking/壁纸.bmp
 ```
-shell自动更换文件夹下壁纸
+shell的自动更换文件夹下壁纸
 ```
 #!/bin/bash
 
