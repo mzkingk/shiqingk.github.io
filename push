@@ -8,7 +8,7 @@ echo "--->提交到hexo分支"
 
 echo "--->clone master分支"
   git clone -b master https://github.com/shiqingk/shiqingk.github.io.git
-  cp -R shiqingk.github.io/.git/ public/.git/
+  sudo cp -R shiqingk.github.io/.git/ public/.git/
   rm -rf shiqingk.github.io
 
 echo "--->提交到master分支"
