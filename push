@@ -1,15 +1,15 @@
-echo "清除垃圾文件"
+echo "--->清除垃圾文件"
 hexo clean
 
-echo "部署"
+echo "--->部署"
 hexo g
 
-echo "提交到hexo分支"
+echo "--->提交到hexo分支"
 git add .
 git commit -m "update hexo"
 git push origin hexo
 
-echo "提交到master分支"
+echo "--->提交到master分支"
 cd public
 git add .
 git commit -m "update master"
@@ -17,4 +17,4 @@ git push origin master
 
 cd ../
 
-echo "完成"
+echo "--->完成"
