@@ -2,6 +2,8 @@ echo "--->部署"
   hexo g
 
 echo "--->提交到hexo分支"
+  git checkout hexo
+  git pull
   git add .
   git commit -m "update hexo"
   git push origin hexo
