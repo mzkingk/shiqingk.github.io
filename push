@@ -1,6 +1,3 @@
-echo "--->清除垃圾文件"
-hexo clean
-
 echo "--->部署"
 hexo g
 
