@@ -1,7 +1,7 @@
 ---
-title: ssm-jsp中用隐式form表单带参跳转
-date: 2019-05-12 11:49:02
-tags:ssm
+title: ssm-jsp中用隐式form表单带参跳转  
+date: 2019-05-12 11:49:02  
+tags:  
 ---
 # 1. login.jsp中在需要跳转的位置,写入这段
 如果传参较多,可以拼接f.innerHTML的字符串

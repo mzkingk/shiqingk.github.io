@@ -1,6 +1,5 @@
 ---
 title: deepin部分使用笔记  
-mathjax: true  
 date: 2019-01-03 19:24:29  
 categories:  
 ---

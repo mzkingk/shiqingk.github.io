@@ -1,7 +1,7 @@
 ---
-title: ssm-定时任务
-date: 2019-05-12 11:41:43
-tags:
+title: ssm-定时任务  
+date: 2019-05-12 11:41:43  
+tags:  
 ---
 # 1. 在springmvc.xml添加如下内容 
 在xmlns中增加
