@@ -12,7 +12,7 @@ sudo cat /tmp/vmware-root/vmware-2290.log
 ```
 能找到下面三处错误：
 ```
-Failed to find /lib/modules/5.1.3-050103-generic/build/include/linux/version.h
+Failed to find /lib/modules/$(uname -r)/build/include/linux/version.h
 
 Failed to build vmmon.  Failed to execute the build command.
 
@@ -20,7 +20,7 @@ Failed to build vmnet.  Failed to execute the build command.
 ```
 问题一不解决好像也没问题，主要是后面两个，不过查到了，就把方法也贴出来了
 ```
-sudo ln -s /usr/include/linux/version.h /lib/modules/5.1.3-050103-generic/build/include/linux/version.h
+sudo ln -s /usr/include/linux/version.h /lib/modules/$(uname -r)/build/include/linux/version.h
 ```
 第二种第三种就是无法编译 vmmon 与 vmnet 模块，然后用的是github上大佬修改好了的文件替换掉就行了
 ```
