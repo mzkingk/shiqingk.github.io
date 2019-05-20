@@ -1,7 +1,7 @@
 ---
 title: ssm-httprequest的请求封装  
 date: 2019-05-12 11:52:00  
-tags:  
+tags:  ssm
 ---
 # 1. 新建一个UrlConnect.class类,写入该方法
 我这用到了net.sf.json.JSONObject这个包，需要在pom里面导入，也可以用其它方式返回结果
