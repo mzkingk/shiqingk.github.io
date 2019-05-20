@@ -5,8 +5,14 @@ categories:
 ---
 linux用过挺长的一段时间了，最开始用的是Ubuntu18.04用了半年，后来换成deepin15.8一直用到现在，这里主要记录一些，使用过程中的经验总结吧  
 被修复的问题，或者失效的，都及时删掉了
-# 1. 升级5.X内核后vmware15无法打开
-从4.X更新到5.0以上的内核后，vmware都无法打开，根据弹窗提示的日志文件，查看对应的日志
+# 干掉dde托盘小图标
+dde桌面托盘那里有音量、wifi设置等快捷方式，但我不太喜欢用，查了查发现使用插件实现的  
+解决方案如下
+```
+sudo mv /usr/lib/dde-dock/plugins/libtray.so /usr/lib/dde-dock/plugins/libtray.so.bak
+```
+# 1. 升级新内核后vmware15无法打开
+从4.X更新到新的内核后，vmware都无法打开，根据弹窗提示的日志文件，查看对应的日志
 ```
 sudo cat /tmp/vmware-root/vmware-2290.log
 ```
@@ -22,17 +28,36 @@ Failed to build vmnet.  Failed to execute the build command.
 ```
 sudo ln -s /usr/include/linux/version.h /lib/modules/$(uname -r)/build/include/linux/version.h
 ```
-第二种第三种就是无法编译 vmmon 与 vmnet 模块，然后用的是github上大佬修改好了的文件替换掉就行了
+第二种第三种就是无法编译 vmmon 与 vmnet 模块  
+首先回到旧内核
+卸载最新版的内核及其文件
+然后重装最新内核
+然后重启从新内核进入系统，以root权限执行下面的脚本
 ```
-git clone -b workstation-15.0.2 https://github.com/mkubecek/vmware-host-modules.git
-cd vmware-host-modules
+#!/bin/bash
+# VMWARE_VERSION是当前电脑上安装的内核版本，按需修改
+VMWARE_VERSION=workstation-15.0.4
+TMP_FOLDER=/tmp/patch-vmware
+rm -fdr $TMP_FOLDER
+mkdir -p $TMP_FOLDER
+cd $TMP_FOLDER
+
+git clone https://github.com/mkubecek/vmware-host-modules.git
+cd $TMP_FOLDER/vmware-host-modules
+git checkout $VMWARE_VERSION
+git fetch
+
 tar -cf vmmon.tar vmmon-only
 tar -cf vmnet.tar vmnet-only
 sudo cp -v vmmon.tar vmnet.tar /usr/lib/vmware/modules/source/
 sudo vmware-modconfig --console --install-all
+
+sudo rm /usr/lib/vmware/lib/libz.so.1/libz.so.1
+sudo ln -s /lib/x86_64-linux-gnu/libz.so.1 /usr/lib/vmware/lib/libz.so.1/libz.so.1
+sudo /etc/init.d/vmware restart
 ```
-这部分学习自
-https://blog.csdn.net/wpzsidis/article/details/78222025  和  https://plumz.me/archives/9871/  
+如果最新的内核上启动过vmware，则必须将回到旧内核卸载重装新内核才能继续执行脚本  
+部分参考自 https://blog.csdn.net/wpzsidis/article/details/78222025  和  https://plumz.me/archives/9871/  
 # 2. vmware中虚拟机安装vmware-tools失败
 错误提示为
 ```
