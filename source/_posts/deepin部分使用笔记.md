@@ -390,11 +390,11 @@ sudo apt-get remove wine
 ```
 ２，清除程序目录及系统菜单项,图标等
 ```
-sudo rm -rf $HOME.wine
+sudo rm -rf $HOME/.wine
+sudo rm -rf /usr/share/wine
 sudo rm -f $HOME/.config/menus/applications-merged/wine*
 sudo rm -rf $HOME/.local/share/applications/wine
 sudo rm -f $HOME/.local/share/desktop-directories/wine*
-sudo rm -f $HOME/.local/share/icons/????_*.{xpm,png}
 sudo rm -f $HOME/.local/share/icons/*-x-wine-*.{xpm,png}
 ```
 3,删除一些扩展文件
@@ -406,6 +406,10 @@ sudo rm -rf $HOME/.local/share/applications/wine*
 清除所有 x-wine-extension... 这样的文件
 ```
 sudo rm -rf $HOME/.local/share/mime/packages/x-wine*
+```
+以上汇总
+```
+sudo rm -rf $HOME/.wine /usr/share/wine $HOME/.config/menus/applications-merged/wine* $HOME/.local/share/applications/wine $HOME/.local/share/desktop-directories/wine* $HOME/.local/share/icons/*-x-wine-*.{xpm,png} $HOME/.local/share/applications/wine* $HOME/.local/share/mime/packages/x-wine*
 ```
 然后还有一些图标选择性删除
 这个目录下：``$HOME/.local/share/icons``把不要的删了
