@@ -1,18 +1,18 @@
 ---
-title: 自行编译shadowsocks-deepin
-date: 2019-05-30 16:44:12
-tags: linux
+title: 自行编译shadowsocks-deepin  
+date: 2019-05-30 16:44:12  
+tags: linux  
 ---
 # 安装要用到的软件
 ```
 sudo apt update
 sudo apt install qt5-default qttools5-dev-tools qt5-qmake g++ qtcreator qttools5-dev -y
-sudo apt install libdtkbase-dev libdtkwidget-dev -y
 sudo apt install libdframeworkdbus-dev -y
 sudo apt install libqrencode-dev libzbar-dev -y
-sudo apt install libdtkcore-dev libdtkwidget-dev libdtkwm-dev libdtkcore-bin -y
+sudo apt install libdtkbase-dev libdtkwidget-dev libdtkwm-dev libdtkcore-bin libdtkcore-dev -y
 sudo apt install libdtksettings-dev libdtksettingsview-dev -y
 sudo apt install dh-make fakeroot -y
+sudo apt install libbotan-2-5 -y
 ```
 # 安装QtShadowsocks
 这个必须自己安装，否则直接执行第三步会编译失败
