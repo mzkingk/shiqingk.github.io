@@ -18,7 +18,7 @@ echo "--->提交到master分支"
   git checkout master
   git pull
   git add .
-  git commit -m "update master"
+  git commit -m "update readme.md"
   git push origin master
 
 echo "--->完成"
