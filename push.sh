@@ -1,6 +1,8 @@
 echo "--->部署"
 hexo g
 
+sudo chmod -R 777 *
+
 echo "--->提交到hexo分支"
 #git checkout hexo
 git pull
