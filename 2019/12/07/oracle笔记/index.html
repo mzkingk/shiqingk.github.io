@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="数据库," />
 
 
 
@@ -86,14 +86,15 @@
 
 
 
-<meta name="description" content="1date: 2019-12-07 16:29:20    在A字段相同的情况下，取B最大(或最小)的   字段 说明    table 表名   A 分组的字段   B 在A相同的情况下，要取出的字段   1select A,max(B)2from table3group by A  A字段不为null取A，A为null则取出B1NVL2(A,A,B)  创建序列   字段 说明    TERM">
+<meta name="description" content="在A字段相同的情况下，取B最大(或最小)的   字段 说明    table 表名   A 分组的字段   B 在A相同的情况下，要取出的字段   1select A,max(B)2from table3group by A  A字段不为null取A，A为null则取出B1NVL2(A,A,B)  创建序列   字段 说明    TERMINALCODE 序列名   1CREATE SEQUENC">
+<meta name="keywords" content="数据库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="oracle笔记">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;09&#x2F;oracle%E7%AC%94%E8%AE%B0&#x2F;index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;07&#x2F;oracle%E7%AC%94%E8%AE%B0&#x2F;index.html">
 <meta property="og:site_name" content="小白随笔">
-<meta property="og:description" content="1date: 2019-12-07 16:29:20    在A字段相同的情况下，取B最大(或最小)的   字段 说明    table 表名   A 分组的字段   B 在A相同的情况下，要取出的字段   1select A,max(B)2from table3group by A  A字段不为null取A，A为null则取出B1NVL2(A,A,B)  创建序列   字段 说明    TERM">
+<meta property="og:description" content="在A字段相同的情况下，取B最大(或最小)的   字段 说明    table 表名   A 分组的字段   B 在A相同的情况下，要取出的字段   1select A,max(B)2from table3group by A  A字段不为null取A，A为null则取出B1NVL2(A,A,B)  创建序列   字段 说明    TERMINALCODE 序列名   1CREATE SEQUENC">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-08T08:33:06.000Z">
+<meta property="og:updated_time" content="2019-12-10T13:30:23.913Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -124,7 +125,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/12/09/oracle笔记/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/12/07/oracle笔记/"/>
 
 
 
@@ -195,6 +196,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -247,7 +258,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/09/oracle%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/07/oracle%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="某清">
@@ -276,8 +287,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-09T08:47:49+08:00">
-                2019-12-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-07T16:29:20+08:00">
+                2019-12-07
               </time>
             
 
@@ -295,8 +306,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/12/09/oracle%E7%AC%94%E8%AE%B0/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/12/09/oracle%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+                <a href="/2019/12/07/oracle%E7%AC%94%E8%AE%B0/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/12/07/oracle%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -318,7 +329,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  161
+                  154
                 </span>
               
 
@@ -355,11 +366,7 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">date: 2019-12-07 16:29:20</span></pre></td></tr></table></figure>
-
-
-
-<h1 id="在A字段相同的情况下，取B最大-或最小-的"><a href="#在A字段相同的情况下，取B最大-或最小-的" class="headerlink" title="在A字段相同的情况下，取B最大(或最小)的"></a>在A字段相同的情况下，取B最大(或最小)的</h1><table>
+        <h1 id="在A字段相同的情况下，取B最大-或最小-的"><a href="#在A字段相同的情况下，取B最大-或最小-的" class="headerlink" title="在A字段相同的情况下，取B最大(或最小)的"></a>在A字段相同的情况下，取B最大(或最小)的</h1><table>
 <thead>
 <tr>
 <th>字段</th>
@@ -432,6 +439,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"><i class="fa fa-tag"></i> 数据库</a>
+          
+        </div>
+      
 
       
       
@@ -443,7 +456,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/09/mysql%E7%AC%94%E8%AE%B0/" rel="prev" title="mysql笔记">
+              <a href="/2019/12/07/mysql%E7%AC%94%E8%AE%B0/" rel="prev" title="mysql笔记">
                 <i class="fa fa-chevron-left"></i> mysql笔记
               </a>
             
@@ -452,10 +465,6 @@
         <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/12/09/linux%E4%B9%8Bmanjaro%E7%AC%94%E8%AE%B0/" rel="next" title="linux之manjaro笔记">
-                linux之manjaro笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -543,6 +552,15 @@
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
