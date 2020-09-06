@@ -86,15 +86,16 @@
 
 
 
-<meta name="description" content="gnome下，开机自启管理程序1sudo apt install gnome-startup-properties 开机自动挂载磁盘查看磁盘分区的UUID  sudo blkid    配置开机自动挂载：将分区信息写到&#x2F;etc&#x2F;fstab文件中让它永久挂载：  sudo vim &#x2F;etc&#x2F;fstab  例如  UUID&#x3D;42168DE83BC5EDAD   &#x2F;media&#x2F;mking&#x2F;dataD">
-<meta name="keywords" content="linux">
+<meta name="description" content="大四用了一年的ubuntu，自然少不了大量的笔记啦，这几篇Linux的就是大四时候记下来的，电脑换了几个，博客没了很多次，总有些东西是始终都在的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux之deepin笔记">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;09&#x2F;linux%E4%B9%8Bdeepin%E7%AC%94%E8%AE%B0&#x2F;index.html">
+<meta property="og:url" content="http://yoursite.com/2019/12/09/linux%E4%B9%8Bdeepin%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="小白随笔">
-<meta property="og:description" content="gnome下，开机自启管理程序1sudo apt install gnome-startup-properties 开机自动挂载磁盘查看磁盘分区的UUID  sudo blkid    配置开机自动挂载：将分区信息写到&#x2F;etc&#x2F;fstab文件中让它永久挂载：  sudo vim &#x2F;etc&#x2F;fstab  例如  UUID&#x3D;42168DE83BC5EDAD   &#x2F;media&#x2F;mking&#x2F;dataD">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-10T13:45:03.098Z">
+<meta property="og:description" content="大四用了一年的ubuntu，自然少不了大量的笔记啦，这几篇Linux的就是大四时候记下来的，电脑换了几个，博客没了很多次，总有些东西是始终都在的">
+<meta property="article:published_time" content="2019-12-09T13:39:44.000Z">
+<meta property="article:modified_time" content="2020-09-06T05:59:06.562Z">
+<meta property="article:author" content="某清">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
 
 
@@ -141,7 +142,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -329,7 +330,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3k
+                  3.1k
                 </span>
               
 
@@ -366,7 +367,10 @@
       
 
       
-        <h1 id="gnome下，开机自启管理程序"><a href="#gnome下，开机自启管理程序" class="headerlink" title="gnome下，开机自启管理程序"></a>gnome下，开机自启管理程序</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo apt install gnome-startup-properties</span></pre></td></tr></table></figure>
+        <p>大四用了一年的ubuntu，自然少不了大量的笔记啦，这几篇Linux的就是大四时候记下来的，电脑换了几个，博客没了很多次，总有些东西是始终都在的</p>
+<a id="more"></a>
+
+<h1 id="gnome下，开机自启管理程序"><a href="#gnome下，开机自启管理程序" class="headerlink" title="gnome下，开机自启管理程序"></a>gnome下，开机自启管理程序</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install gnome-startup-properties</span><br></pre></td></tr></table></figure>
 <h1 id="开机自动挂载磁盘"><a href="#开机自动挂载磁盘" class="headerlink" title="开机自动挂载磁盘"></a>开机自动挂载磁盘</h1><p>查看磁盘分区的UUID</p>
 <blockquote>
 <p>sudo blkid  </p>
@@ -393,54 +397,54 @@
 <p>cat a.txt |sort|uniq &gt; b.txt &amp;&amp; sed -r ‘/^!/d’ b.txt &gt; c.txt &amp;&amp; rm b.txt</p>
 </blockquote>
 <h1 id="sudo-gedit-错误：Gtk-WARNING-cannot-open-display-0-0"><a href="#sudo-gedit-错误：Gtk-WARNING-cannot-open-display-0-0" class="headerlink" title="sudo gedit 错误：Gtk-WARNING **: cannot open display: :0.0"></a>sudo gedit 错误：Gtk-WARNING **: cannot open display: :0.0</h1><p>当使用su 到另外一个用户运行某个程序，而这个程序又要有图形显示的时候，就有可能有下面提示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">No protocol specified</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Unable to init server: 无法连接： 拒绝连接</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">(gedit:22339): Gtk-WARNING **: **:**:**.**: cannot open display: :0</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">No protocol specified</span><br><span class="line">Unable to init server: 无法连接： 拒绝连接</span><br><span class="line">(gedit:22339): Gtk-WARNING **: **:**:**.**: cannot open display: :0</span><br></pre></td></tr></table></figure>
 <p>解决方法：<br>这是因为Xserver默认情况下不允许别的用户的图形程序的图形显示在当前屏幕上. 如果需要别的用户的图形显示在当前屏幕上, 则应以当前登陆的用户, 也就是切换身份前的用户执行如下命令。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">xhost +</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhost +</span><br></pre></td></tr></table></figure>
 <p>通过执行这条命令，就授予了其它用户访问当前屏幕的权限，于是就可以以另外的用户运行需要运行的程序了。<a href="https://www.linuxidc.com/Linux/2017-10/148145.htm" target="_blank" rel="noopener">学习自linux公社</a></p>
 <h1 id="修改默认的文件管理器"><a href="#修改默认的文件管理器" class="headerlink" title="修改默认的文件管理器"></a>修改默认的文件管理器</h1><p>sudo apt install nemo</p>
 <p>在~/.config/mimeapps.list的<br>[Default Applications]字段下修改所有org.gnome.Nautilus.desktop的字段为nemo的<br>即可更改默认的文件管理器<br><a href="https://bbs.deepin.org/" target="_blank" rel="noopener">学习自deepin社区(@dragondjf)</a></p>
 <h1 id="ubuntu18下坚果云使用问题"><a href="#ubuntu18下坚果云使用问题" class="headerlink" title="ubuntu18下坚果云使用问题"></a>ubuntu18下坚果云使用问题</h1><p>提示无法连接ssl，备份并移除老的cacerts</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo mv &#x2F;etc&#x2F;ssl&#x2F;certs&#x2F;java&#x2F;cacerts&#123;,.backup&#125;</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv &#x2F;etc&#x2F;ssl&#x2F;certs&#x2F;java&#x2F;cacerts&#123;,.backup&#125;</span><br></pre></td></tr></table></figure>
 <p>生成新的cacerts</p>
 <blockquote>
 <p>sudo keytool -importkeystore -destkeystore /etc/ssl/certs/java/cacerts -deststoretype jks -deststorepass changeit -srckeystore /etc/ssl/certs/java/cacerts.backup -srcstoretype pkcs12 -srcstorepass changeit</p>
 </blockquote>
 <p><a href="http://tieba.baidu.com/p/5680448441" target="_blank" rel="noopener">吧友@珏缘愛</a>询问官方后官方提供的临时解决方案<br>清除重装方案(来自客服回复)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">rm ~&#x2F;.config&#x2F;autostart&#x2F;nutstore-daemon.desktoprm ~&#x2F;.local&#x2F;share&#x2F;applications&#x2F;nutstore-menu.desktoprm ~&#x2F;.local&#x2F;share&#x2F;icons&#x2F;hicolor&#x2F;64x64&#x2F;apps&#x2F;nutstore.pnggtk-update-icon-cache --ignore-theme-index &quot;~&#x2F;.local&#x2F;share&#x2F;icons&#x2F;hicolor&quot; &gt; &#x2F;dev&#x2F;null 2&gt;&amp;1rm -r ~&#x2F;.nutstore&#x2F;dist</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm ~&#x2F;.config&#x2F;autostart&#x2F;nutstore-daemon.desktoprm ~&#x2F;.local&#x2F;share&#x2F;applications&#x2F;nutstore-menu.desktoprm ~&#x2F;.local&#x2F;share&#x2F;icons&#x2F;hicolor&#x2F;64x64&#x2F;apps&#x2F;nutstore.pnggtk-update-icon-cache --ignore-theme-index &quot;~&#x2F;.local&#x2F;share&#x2F;icons&#x2F;hicolor&quot; &gt; &#x2F;dev&#x2F;null 2&gt;&amp;1rm -r ~&#x2F;.nutstore&#x2F;dist</span><br></pre></td></tr></table></figure>
 <p>上面这一段，客服回我的,分割都没做好，错误一堆，整理之后如下，输完了重新安装就可解决无法打开的问题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">rm ~&#x2F;.config&#x2F;autostart&#x2F;nutstore-daemon.desktop</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">rm ~&#x2F;.local&#x2F;share&#x2F;applications&#x2F;nutstore-menu.desktop</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">rm ~&#x2F;.local&#x2F;share&#x2F;icons&#x2F;hicolor&#x2F;64x64&#x2F;apps&#x2F;nutstore.png</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">gtk-update-icon-cache --ignore-theme-index &quot;~&#x2F;.local&#x2F;share&#x2F;icons&#x2F;hicolor&quot; &gt; &#x2F;dev&#x2F;null 2&gt;&amp;1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">rm -r ~&#x2F;.nutstore&#x2F;dist</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rm ~&#x2F;.config&#x2F;autostart&#x2F;nutstore-daemon.desktop</span><br><span class="line">rm ~&#x2F;.local&#x2F;share&#x2F;applications&#x2F;nutstore-menu.desktop</span><br><span class="line">rm ~&#x2F;.local&#x2F;share&#x2F;icons&#x2F;hicolor&#x2F;64x64&#x2F;apps&#x2F;nutstore.png</span><br><span class="line">gtk-update-icon-cache --ignore-theme-index &quot;~&#x2F;.local&#x2F;share&#x2F;icons&#x2F;hicolor&quot; &gt; &#x2F;dev&#x2F;null 2&gt;&amp;1</span><br><span class="line">rm -r ~&#x2F;.nutstore&#x2F;dist</span><br></pre></td></tr></table></figure>
 <h1 id="Ubuntu启动器快捷方式的创建"><a href="#Ubuntu启动器快捷方式的创建" class="headerlink" title="Ubuntu启动器快捷方式的创建"></a>Ubuntu启动器快捷方式的创建</h1><p><a href="https://blog.csdn.net/wangxiulong056/article/details/51132062" target="_blank" rel="noopener">https://blog.csdn.net/wangxiulong056/article/details/51132062</a></p>
-<h1 id="快捷方式存放位置"><a href="#快捷方式存放位置" class="headerlink" title="快捷方式存放位置"></a>快捷方式存放位置</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;share&#x2F;applications</span></pre></td></tr></table></figure>
-<h1 id="没有realsse文件"><a href="#没有realsse文件" class="headerlink" title="没有realsse文件"></a>没有realsse文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd &#x2F;etc&#x2F;apt&#x2F;sources.list.d</span></pre></td></tr></table></figure>
+<h1 id="快捷方式存放位置"><a href="#快捷方式存放位置" class="headerlink" title="快捷方式存放位置"></a>快捷方式存放位置</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;share&#x2F;applications</span><br></pre></td></tr></table></figure>
+<h1 id="没有realsse文件"><a href="#没有realsse文件" class="headerlink" title="没有realsse文件"></a>没有realsse文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;etc&#x2F;apt&#x2F;sources.list.d</span><br></pre></td></tr></table></figure>
 <p>把找不到realsse文件的改成.bak后缀<br><a href="https://blog.csdn.net/weicao1990/article/details/64121569" target="_blank" rel="noopener">https://blog.csdn.net/weicao1990/article/details/64121569</a></p>
 <h1 id="在线视屏播放的问题"><a href="#在线视屏播放的问题" class="headerlink" title="在线视屏播放的问题"></a>在线视屏播放的问题</h1><p><a href="https://blog.csdn.net/qq_37623240/article/details/82288689" target="_blank" rel="noopener">可以看看我在csdn上的一篇分享</a></p>
 <h1 id="使用ssh链接linux主机时，可能出现“Host-key-verification-failed-“的提示，ssh连接不成功。"><a href="#使用ssh链接linux主机时，可能出现“Host-key-verification-failed-“的提示，ssh连接不成功。" class="headerlink" title="使用ssh链接linux主机时，可能出现“Host key verification failed.“的提示，ssh连接不成功。"></a>使用ssh链接linux主机时，可能出现“Host key verification failed.“的提示，ssh连接不成功。</h1><p>在.ssh/config（或者/etc/ssh/ssh_config）中配置：<br>StrictHostKeyChecking no<br>UserKnownHostsFile /dev/null<br>原帖地址 <a href="http://www.51testing.com/html/38/225738-234384.html" target="_blank" rel="noopener">http://www.51testing.com/html/38/225738-234384.html</a></p>
-<h1 id="在-Linux-中使用-Preload-改善应用程序启动速度"><a href="#在-Linux-中使用-Preload-改善应用程序启动速度" class="headerlink" title="在 Linux 中使用 Preload 改善应用程序启动速度"></a>在 Linux 中使用 Preload 改善应用程序启动速度</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo apt-get install preload</span></pre></td></tr></table></figure>
+<h1 id="在-Linux-中使用-Preload-改善应用程序启动速度"><a href="#在-Linux-中使用-Preload-改善应用程序启动速度" class="headerlink" title="在 Linux 中使用 Preload 改善应用程序启动速度"></a>在 Linux 中使用 Preload 改善应用程序启动速度</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install preload</span><br></pre></td></tr></table></figure>
 <p>Preload 安装完成后，重新启动系统，不需要做任何配置(ssd下效果几乎没有)<br>如果你想去对它进行微调，你可以通过编辑缺省的配置文件 /etc/preload.conf 来实现<br><a href="https://linux.cn/article-9660-1.html" target="_blank" rel="noopener">原帖地址</a></p>
-<h1 id="缩短grub开机引导界面时长"><a href="#缩短grub开机引导界面时长" class="headerlink" title="缩短grub开机引导界面时长"></a>缩短grub开机引导界面时长</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo gedit &#x2F;etc&#x2F;default&#x2F;grub</span></pre></td></tr></table></figure>
+<h1 id="缩短grub开机引导界面时长"><a href="#缩短grub开机引导界面时长" class="headerlink" title="缩短grub开机引导界面时长"></a>缩短grub开机引导界面时长</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit &#x2F;etc&#x2F;default&#x2F;grub</span><br></pre></td></tr></table></figure>
 <p>GRUB_TIMEOUT这行数字改成0.1<br>这样还是会闪一下但不会进入那个界面等太久<br>改成0会恢复成10秒，1、2、3都是2s？自行尝试<br>完成后命令行必须更新</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo update-grub</span></pre></td></tr></table></figure>
-<h1 id="给apt-get开启多线程加速"><a href="#给apt-get开启多线程加速" class="headerlink" title="给apt-get开启多线程加速"></a>给apt-get开启多线程加速</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:apt-fast&#x2F;stable</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">sudo apt-get -y install apt-fast</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-grub</span><br></pre></td></tr></table></figure>
+<h1 id="给apt-get开启多线程加速"><a href="#给apt-get开启多线程加速" class="headerlink" title="给apt-get开启多线程加速"></a>给apt-get开启多线程加速</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:apt-fast&#x2F;stable</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get -y install apt-fast</span><br></pre></td></tr></table></figure>
 <p>装完之后，弹出一个页面，选择apt-get或者apt都可以，选择哪个就是给哪个开启多线程<br>以后也可以用apt-fast代替apt-get来操作<br><a href="https://www.tecmint.com/use-apt-fast-command-speed-up-apt-get-downloads-installs-ubuntu/" target="_blank" rel="noopener">详细介绍看这里</a></p>
 <h1 id="boot空间不足"><a href="#boot空间不足" class="headerlink" title="boot空间不足"></a>boot空间不足</h1><p>打开终端，在终端里依次输入一下命令，以解决/boot分区满的问题： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">1. df -h （查看Ubuntu的文件系统 使用情况） </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">2. uname -a (查看当前使用的内核版本) </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">3. dpkg --get-selections| grep linux   (查看已经安装的内核，然后删掉不用的旧的)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">4. sudo apt-get remove linux-image- （删掉旧的，别删错了！！！） </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">5. sudo update-grub</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. df -h （查看Ubuntu的文件系统 使用情况） </span><br><span class="line"></span><br><span class="line">2. uname -a (查看当前使用的内核版本) </span><br><span class="line"></span><br><span class="line">3. dpkg --get-selections| grep linux   (查看已经安装的内核，然后删掉不用的旧的)</span><br><span class="line"></span><br><span class="line">4. sudo apt-get remove linux-image- （删掉旧的，别删错了！！！） </span><br><span class="line"></span><br><span class="line">5. sudo update-grub</span><br></pre></td></tr></table></figure>
 <p>再查看下内核和磁盘容量，发现释放了很多空间。<br>5.最后出现了这个警告： </p>
 <blockquote>
 <p>The link /vmlinuz.old is a damaged link<br>Removing symbolic link vmlinuz.old<br>you may need to re-run your boot loader[grub]<br>The link /initrd.img.old is a damaged link<br>Removing symbolic link initrd.img.old</p>
 </blockquote>
 <p>you may need to re-run your boot loader[grub]<br>解决办法： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo &#x2F;usr&#x2F;sbin&#x2F;update-grub</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo &#x2F;usr&#x2F;sbin&#x2F;update-grub</span><br></pre></td></tr></table></figure>
 <p>done……</p>
 <h1 id="更换字体"><a href="#更换字体" class="headerlink" title="更换字体"></a>更换字体</h1><p>ubuntu自带的字体不太好看，所以采用文泉译微米黑字体替代，效果会比较好，毕竟是国产字体！</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo apt-get install fonts-wqy-microhei</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install fonts-wqy-microhei</span><br></pre></td></tr></table></figure>
 <p>然后通过unity-tweak-tool来替换字体：</p>
 <h1 id="unity-tweak-tool"><a href="#unity-tweak-tool" class="headerlink" title="unity-tweak-tool"></a>unity-tweak-tool</h1><p>调整 Unity 桌面环境，还是推荐使用Unity Tweak Tool，这是一个非常好用的 Unity 图形化管理工具，可以修改工作区数量、热区等。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo apt-get install unity-tweak-tool</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install unity-tweak-tool</span><br></pre></td></tr></table></figure>
 <p>安装Unity-Tweak-Tool出错<br>The following schema is missing<br>com.canonical.notify.osd<br>In order to work properly, Unity Tweak Tool recommends you install the necessary packages.</p>
 <p>则</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo apt-get install notify-osd</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install notify-osd</span><br></pre></td></tr></table></figure>
 <p>遇到com.canonical.indicator.bluetooth missing，则</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo apt-get install indicator-* hud</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install indicator-* hud</span><br></pre></td></tr></table></figure>
 <h1 id="ubuntu离线安装网卡驱动-博通系列网卡有效"><a href="#ubuntu离线安装网卡驱动-博通系列网卡有效" class="headerlink" title="ubuntu离线安装网卡驱动(博通系列网卡有效)"></a>ubuntu离线安装网卡驱动(博通系列网卡有效)</h1><p>把iso包解压：按照这个路径找到这样一个文件</p>
 <blockquote>
 <p>pool -&gt; main -&gt; d -&gt; dkms -&gt; dkms_2.2.0.3-2ubuntu11.1_all.deb</p>
@@ -458,22 +462,22 @@
 <p>运行  sudo dpkg -i [文件名]<br>示例  sudo dpkg -i bcmwl-kernel-source_6.30.223.248+bdcom-0ubuntu8_amd64.deb</p>
 </blockquote>
 <p>然后重启Wi-Fi，就可以搜索到 WIFI了。</p>
-<h1 id="超好用的多线程下载工具-aria2的安装："><a href="#超好用的多线程下载工具-aria2的安装：" class="headerlink" title="超好用的多线程下载工具-aria2的安装："></a>超好用的多线程下载工具-aria2的安装：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo apt-get update </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">sudo apt-get install aria2</span></pre></td></tr></table></figure>
+<h1 id="超好用的多线程下载工具-aria2的安装："><a href="#超好用的多线程下载工具-aria2的安装：" class="headerlink" title="超好用的多线程下载工具-aria2的安装："></a>超好用的多线程下载工具-aria2的安装：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update </span><br><span class="line">sudo apt-get install aria2</span><br></pre></td></tr></table></figure>
 <p>使用的时候</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">aria2c url</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aria2c url</span><br></pre></td></tr></table></figure>
 <h1 id="v2ray在linux下的使用指南"><a href="#v2ray在linux下的使用指南" class="headerlink" title="v2ray在linux下的使用指南"></a>v2ray在linux下的使用指南</h1><p>ubuntu系统下使用命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo su &amp; bash &lt;(curl -L -s https:&#x2F;&#x2F;install.direct&#x2F;go.sh)</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su &amp; bash &lt;(curl -L -s https:&#x2F;&#x2F;install.direct&#x2F;go.sh)</span><br></pre></td></tr></table></figure>
 <p>安装完成后,参照网上的教程修改/etc/v2ray/config.json改成用户端的配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo gedit &#x2F;etc&#x2F;v2ray&#x2F;config.json</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit &#x2F;etc&#x2F;v2ray&#x2F;config.json</span><br></pre></td></tr></table></figure>
 <p>改成全局代理，目前的模式默认为国内外自动分流，国外走代理，国内直连，但是想国内国外一起走代理，则</p>
 <blockquote>
 <p>在config.json配置文件的routing里改，把rules里面删空</p>
 </blockquote>
 <p>然后v2ray里面的本地端口是多少，就把代理设置的sock5端口改成多少</p>
 <h1 id="linux下在终端连接vps"><a href="#linux下在终端连接vps" class="headerlink" title="linux下在终端连接vps"></a>linux下在终端连接vps</h1><p>终端输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ssh root@ip</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@ip</span><br></pre></td></tr></table></figure>
 <p>或者文件传输模式则，输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sftp root@ip</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sftp root@ip</span><br></pre></td></tr></table></figure>
 <p>或者用scp传，具体略</p>
 <h1 id="安装WPS打开提示系统缺失字体"><a href="#安装WPS打开提示系统缺失字体" class="headerlink" title="安装WPS打开提示系统缺失字体"></a>安装WPS打开提示系统缺失字体</h1><p>直接看原帖吧<br><a href="https://blog.csdn.net/StefanSalvatore/article/details/72765659" target="_blank" rel="noopener">https://blog.csdn.net/StefanSalvatore/article/details/72765659</a></p>
 <h1 id="解决安装wps缺少libpng12-0的问题"><a href="#解决安装wps缺少libpng12-0的问题" class="headerlink" title="解决安装wps缺少libpng12-0的问题"></a>解决安装wps缺少libpng12-0的问题</h1><blockquote>
@@ -521,33 +525,33 @@
 <blockquote>
 <p>sudo ln -sT /home/mzking/下载 /home/mzking/桌面/下载</p>
 </blockquote>
-<h1 id="查看当前ip信息"><a href="#查看当前ip信息" class="headerlink" title="查看当前ip信息"></a>查看当前ip信息</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo curl ip.gs</span></pre></td></tr></table></figure>
+<h1 id="查看当前ip信息"><a href="#查看当前ip信息" class="headerlink" title="查看当前ip信息"></a>查看当前ip信息</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl ip.gs</span><br></pre></td></tr></table></figure>
 <p>如果提示未安装curl，则  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo apt install curl</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install curl</span><br></pre></td></tr></table></figure>
 <h1 id="apt-get使用代理"><a href="#apt-get使用代理" class="headerlink" title="apt-get使用代理"></a>apt-get使用代理</h1><h2 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h2><p>如果只是想临时使用http代理，可以在使用apt-get之前于终端下输入：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">export http_proxy&#x3D;&quot;http:&#x2F;&#x2F;用户名:密码@代理IP:代理端口&quot;</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export http_proxy&#x3D;&quot;http:&#x2F;&#x2F;用户名:密码@代理IP:代理端口&quot;</span><br></pre></td></tr></table></figure>
 <h2 id="方法二：（方法一的持久化）"><a href="#方法二：（方法一的持久化）" class="headerlink" title="方法二：（方法一的持久化）"></a>方法二：（方法一的持久化）</h2><p>如果希望apt-get与其它应用程序都可以一直使用http代理，可以这样：<br>在终端下编辑~/.bashrc文件：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo gedit ~&#x2F;.bashrc</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit ~&#x2F;.bashrc</span><br></pre></td></tr></table></figure>
 <p>在文件末尾添加如下两句：   </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">http_proxy&#x3D;http:&#x2F;&#x2F;用户名:密码@代理地址:代理端口  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">export http_proxy</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http_proxy&#x3D;http:&#x2F;&#x2F;用户名:密码@代理地址:代理端口  </span><br><span class="line">export http_proxy</span><br></pre></td></tr></table></figure>
 
 <h1 id="配置Shadowsocks详解"><a href="#配置Shadowsocks详解" class="headerlink" title="配置Shadowsocks详解"></a>配置Shadowsocks详解</h1><p>这里有<a href="https://blog.csdn.net/blessLZH0108/article/details/80396486" target="_blank" rel="noopener">https://blog.csdn.net/blessLZH0108/article/details/80396486</a><br>但我觉得v2ray更好用</p>
 <h1 id="ubuntu18-04下wine的安装与使用，qq可用"><a href="#ubuntu18-04下wine的安装与使用，qq可用" class="headerlink" title="ubuntu18.04下wine的安装与使用，qq可用"></a>ubuntu18.04下wine的安装与使用，qq可用</h1><p>安装及字体问题，链接有<br><a href="https://blog.csdn.net/taotieren/article/details/51767248" target="_blank" rel="noopener">https://blog.csdn.net/taotieren/article/details/51767248</a></p>
 <h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><blockquote>
 <p><strong>进入.exe可执行程序目录</strong>（一般是/home/用户名/.wine/drive_c/ 这个目录下），终端运行</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">wine **.exe</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wine **.exe</span><br></pre></td></tr></table></figure>
 <h2 id="方法三，创建桌面快捷方式点击运行"><a href="#方法三，创建桌面快捷方式点击运行" class="headerlink" title="方法三，创建桌面快捷方式点击运行"></a>方法三，创建桌面快捷方式点击运行</h2><p>启动器打开”启动应用程序“，命令里填</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">wine 路径\程序名</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wine 路径\程序名</span><br></pre></td></tr></table></figure>
 <p>路径中不能有空格。有的话在空格前加“\”<br>然后把图标拖到桌面，右键属性打钩“允许作为程序执行文件”，然后就可以直接点击执行了</p>
 <h1 id="彻底删除wine"><a href="#彻底删除wine" class="headerlink" title="彻底删除wine"></a>彻底删除wine</h1><p>先依次执行以下操作<br>１，卸载之：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo apt-get remove wine</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove wine</span><br></pre></td></tr></table></figure>
 <p>２，清除程序目录及系统菜单项,图标等</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd $HOME</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">sudo rm -rf .wine</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">sudo rm -f $HOME&#x2F;.config&#x2F;menus&#x2F;applications-merged&#x2F;wine*</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">sudo rm -rf $HOME&#x2F;.local&#x2F;share&#x2F;applications&#x2F;wine</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">sudo rm -f $HOME&#x2F;.local&#x2F;share&#x2F;desktop-directories&#x2F;wine*</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">sudo rm -f $HOME&#x2F;.local&#x2F;share&#x2F;icons&#x2F;????_*.&#123;xpm,png&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">sudo rm -f $HOME&#x2F;.local&#x2F;share&#x2F;icons&#x2F;*-x-wine-*.&#123;xpm,png&#125;</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd $HOME</span><br><span class="line">sudo rm -rf .wine</span><br><span class="line">sudo rm -f $HOME&#x2F;.config&#x2F;menus&#x2F;applications-merged&#x2F;wine*</span><br><span class="line">sudo rm -rf $HOME&#x2F;.local&#x2F;share&#x2F;applications&#x2F;wine</span><br><span class="line">sudo rm -f $HOME&#x2F;.local&#x2F;share&#x2F;desktop-directories&#x2F;wine*</span><br><span class="line">sudo rm -f $HOME&#x2F;.local&#x2F;share&#x2F;icons&#x2F;????_*.&#123;xpm,png&#125;</span><br><span class="line">sudo rm -f $HOME&#x2F;.local&#x2F;share&#x2F;icons&#x2F;*-x-wine-*.&#123;xpm,png&#125;</span><br></pre></td></tr></table></figure>
 <p>3,删除一些扩展文件<br>删除所有类似wine-extension-*.desktop这类的东东</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo rm -rf $HOME&#x2F;.local&#x2F;share&#x2F;applications&#x2F;wine*</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf $HOME&#x2F;.local&#x2F;share&#x2F;applications&#x2F;wine*</span><br></pre></td></tr></table></figure>
 <p>另外一个目录: ~/.local/share/mime/packages<br>清除所有 x-wine-extension… 这样的文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo rm -rf $HOME&#x2F;.local&#x2F;share&#x2F;mime&#x2F;packages&#x2F;x-wine*</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf $HOME&#x2F;.local&#x2F;share&#x2F;mime&#x2F;packages&#x2F;x-wine*</span><br></pre></td></tr></table></figure>
 <p>然后还有一些图标选择性删除<br>这个目录下：<code>$HOME/.local/share/icons</code>把不要的删了<br>然后 sudo reboot 重启就ＯＫ了，不重启也行<br>原帖地址<a href="https://blog.csdn.net/ustczwc/article/details/8956371" target="_blank" rel="noopener">https://blog.csdn.net/ustczwc/article/details/8956371</a></p>
 <h1 id="eclipse"><a href="#eclipse" class="headerlink" title="eclipse"></a>eclipse</h1><p><a href="https://blog.csdn.net/weixx3/article/details/80350087" target="_blank" rel="noopener">https://blog.csdn.net/weixx3/article/details/80350087</a></p>
 <h1 id="eclipse中文乱码解决方案："><a href="#eclipse中文乱码解决方案：" class="headerlink" title="eclipse中文乱码解决方案："></a>eclipse中文乱码解决方案：</h1><blockquote>
@@ -566,11 +570,11 @@
 </blockquote>
 <p>完了在appimage文件上右键用它打开就行</p>
 <h1 id="命令行走socks5代理：Proxychains"><a href="#命令行走socks5代理：Proxychains" class="headerlink" title="命令行走socks5代理：Proxychains"></a>命令行走socks5代理：Proxychains</h1><p>安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo apt-get install proxychains</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install proxychains</span><br></pre></td></tr></table></figure>
 <p>修改，只需要把 /etc/proxychains.conf 末尾一行改成这样OK：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">socks5 127.0.0.1 1080</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">socks5 127.0.0.1 1080</span><br></pre></td></tr></table></figure>
 <p>这样 socks5 连接到 1080 端口之后，就可以在命令前面加上 proxychains 来让程序走 socks5 代理。  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo proxychains apt-get update</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo proxychains apt-get update</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><a href="https://zhuanlan.zhihu.com/p/24358104" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/24358104</a><br><a href="https://blog.csdn.net/mingjie1212/article/details/51814421" target="_blank" rel="noopener">https://blog.csdn.net/mingjie1212/article/details/51814421</a></p>
 </blockquote>
@@ -605,6 +609,10 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/13/%E6%94%B6%E8%97%8F%E7%9A%84shell%E8%84%9A%E6%9C%AC/" rel="prev" title="收藏的shell脚本">
+                <i class="fa fa-chevron-left"></i> 收藏的shell脚本
+              </a>
             
           </div>
 
@@ -694,7 +702,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -707,7 +715,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -770,7 +778,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -791,7 +799,7 @@
     
       <span class="post-meta-item-text">全站共&#58;</span>
     
-    <span title="Site words total count">5.4k</span>字
+    <span title="Site words total count">14.8k</span>字
   
         
 
@@ -949,7 +957,7 @@
 
 
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/valine/1.4.14/Valine.min.js"></script>
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];

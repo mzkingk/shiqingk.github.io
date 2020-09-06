@@ -86,15 +86,16 @@
 
 
 
-<meta name="description" content="在A字段相同的情况下，取B最大(或最小)的   字段 说明    table 表名   A 分组的字段   B 在A相同的情况下，要取出的字段   1select A,max(B)2from table3group by A  A字段不为null取A，A为null则取出B1NVL2(A,A,B)  创建序列   字段 说明    TERMINALCODE 序列名   1CREATE SEQUENC">
-<meta name="keywords" content="数据库">
+<meta name="description" content="工作第一年，用过最久的数据库，我都忘了写过多少的SQL语句了，刚开始代码质量是真的低">
 <meta property="og:type" content="article">
 <meta property="og:title" content="oracle笔记">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;07&#x2F;oracle%E7%AC%94%E8%AE%B0&#x2F;index.html">
+<meta property="og:url" content="http://yoursite.com/2019/12/07/oracle%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="小白随笔">
-<meta property="og:description" content="在A字段相同的情况下，取B最大(或最小)的   字段 说明    table 表名   A 分组的字段   B 在A相同的情况下，要取出的字段   1select A,max(B)2from table3group by A  A字段不为null取A，A为null则取出B1NVL2(A,A,B)  创建序列   字段 说明    TERMINALCODE 序列名   1CREATE SEQUENC">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-10T13:30:23.913Z">
+<meta property="og:description" content="工作第一年，用过最久的数据库，我都忘了写过多少的SQL语句了，刚开始代码质量是真的低">
+<meta property="article:published_time" content="2019-12-07T08:29:20.000Z">
+<meta property="article:modified_time" content="2020-09-06T06:04:35.453Z">
+<meta property="article:author" content="某清">
+<meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
 
 
@@ -141,7 +142,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -329,7 +330,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  154
+                  375
                 </span>
               
 
@@ -366,7 +367,10 @@
       
 
       
-        <h1 id="在A字段相同的情况下，取B最大-或最小-的"><a href="#在A字段相同的情况下，取B最大-或最小-的" class="headerlink" title="在A字段相同的情况下，取B最大(或最小)的"></a>在A字段相同的情况下，取B最大(或最小)的</h1><table>
+        <p>工作第一年，用过最久的数据库，我都忘了写过多少的SQL语句了，刚开始代码质量是真的低</p>
+<a id="more"></a>
+
+<h1 id="在A字段相同的情况下，取B最大-或最小-的"><a href="#在A字段相同的情况下，取B最大-或最小-的" class="headerlink" title="在A字段相同的情况下，取B最大(或最小)的"></a>在A字段相同的情况下，取B最大(或最小)的</h1><table>
 <thead>
 <tr>
 <th>字段</th>
@@ -386,9 +390,9 @@
 <td>在A相同的情况下，要取出的字段</td>
 </tr>
 </tbody></table>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">select A,max(B)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">from table</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">group by A</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select A,max(B)</span><br><span class="line">from table</span><br><span class="line">group by A</span><br></pre></td></tr></table></figure>
 
-<h1 id="A字段不为null取A，A为null则取出B"><a href="#A字段不为null取A，A为null则取出B" class="headerlink" title="A字段不为null取A，A为null则取出B"></a>A字段不为null取A，A为null则取出B</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">NVL2(A,A,B)</span></pre></td></tr></table></figure>
+<h1 id="A字段不为null取A，A为null则取出B"><a href="#A字段不为null取A，A为null则取出B" class="headerlink" title="A字段不为null取A，A为null则取出B"></a>A字段不为null取A，A为null则取出B</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NVL2(A,A,B)</span><br></pre></td></tr></table></figure>
 
 <h1 id="创建序列"><a href="#创建序列" class="headerlink" title="创建序列"></a>创建序列</h1><table>
 <thead>
@@ -402,7 +406,7 @@
 <td>序列名</td>
 </tr>
 </tbody></table>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">CREATE SEQUENCE TERMINALCODE</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">MINVALUE 1 </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">NOMAXVALUE </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">INCREMENT BY 1 </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">START WITH 1 NOCACHE;</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE SEQUENCE TERMINALCODE</span><br><span class="line">MINVALUE 1 </span><br><span class="line">NOMAXVALUE </span><br><span class="line">INCREMENT BY 1 </span><br><span class="line">START WITH 1 NOCACHE;</span><br></pre></td></tr></table></figure>
 
 <h1 id="后台分页的写法"><a href="#后台分页的写法" class="headerlink" title="后台分页的写法"></a>后台分页的写法</h1><table>
 <thead>
@@ -420,9 +424,23 @@
 <td>表名</td>
 </tr>
 </tbody></table>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">SELECT * FROM ( SELECT T.*, row_number() over ( ORDER BY UPDATETIME DESC ) rn </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">FROM(</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">table</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">)T ) </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">WHERE rn BETWEEN 0 AND 10</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM ( SELECT T.*, row_number() over ( ORDER BY UPDATETIME DESC ) rn </span><br><span class="line">FROM(</span><br><span class="line">table</span><br><span class="line">)T ) </span><br><span class="line">WHERE rn BETWEEN 0 AND 10</span><br></pre></td></tr></table></figure>
 
-<h1 id="SQL优化"><a href="#SQL优化" class="headerlink" title="SQL优化"></a>SQL优化</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">on 之后的过滤在where之前执行的</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">大表a往前放</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">select *</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">from a,b</span></pre></td></tr></table></figure>
+<h1 id="SQL优化"><a href="#SQL优化" class="headerlink" title="SQL优化"></a>SQL优化</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">on 之后的过滤在where之前执行的</span><br><span class="line"></span><br><span class="line">大表a往前放</span><br><span class="line">select *</span><br><span class="line">from a,b</span><br><span class="line"></span><br><span class="line">用exists替换in</span><br><span class="line"></span><br><span class="line">应该用inner join的就不用left join</span><br><span class="line"></span><br><span class="line">减少子查询</span><br><span class="line"></span><br><span class="line">重要字段可以加上索引提升查询效率</span><br></pre></td></tr></table></figure>
+
+<h1 id="查询锁和解除锁"><a href="#查询锁和解除锁" class="headerlink" title="查询锁和解除锁"></a>查询锁和解除锁</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">select t2.username,</span><br><span class="line">        t2.sid,</span><br><span class="line">        t2.serial#,</span><br><span class="line">        t3.object_name,</span><br><span class="line">        t2.OSUSER,</span><br><span class="line">        t2.MACHINE,</span><br><span class="line">        t2.PROGRAM,</span><br><span class="line">        t2.LOGON_TIME,</span><br><span class="line">        t2.COMMAND,</span><br><span class="line">        t2.LOCKWAIT,</span><br><span class="line">        t2.SADDR,</span><br><span class="line">        t2.PADDR,</span><br><span class="line">        t2.TADDR,</span><br><span class="line">        t2.SQL_ADDRESS,</span><br><span class="line">        t1.LOCKED_MODE</span><br><span class="line">        from v$locked_object t1, v$session t2, dba_objects t3</span><br><span class="line">        where t1.session_id &#x3D; t2.sid</span><br><span class="line">        and t1.object_id &#x3D; t3.object_id</span><br><span class="line">        order by t2.logon_time;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from dba_ddl_locks</span><br><span class="line">order by SESSION_ID DESC</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select sid,serial# from v$session where sid&#x3D;384;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter system kill session &#39;384,56011&#39;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="创建全局的临时表"><a href="#创建全局的临时表" class="headerlink" title="创建全局的临时表"></a>创建全局的临时表</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-- Create table</span><br><span class="line">create global temporary table TMP_PBPBCBBB_YB</span><br><span class="line">(</span><br><span class="line">  f_gsjc VARCHAR2(100),</span><br><span class="line">  f_zje  NUMBER</span><br><span class="line">)</span><br><span class="line">on commit delete rows;</span><br></pre></td></tr></table></figure>
+
+<h1 id="检查数据库里的所有存储过程"><a href="#检查数据库里的所有存储过程" class="headerlink" title="检查数据库里的所有存储过程"></a>检查数据库里的所有存储过程</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT OBJECT_NAME,OBJECT_TYPE,CREATED,LAST_DDL_TIME</span><br><span class="line">FROM USER_OBJECTS </span><br><span class="line">WHERE OBJECT_TYPE in</span><br><span class="line">(&#39;PROCEDURE&#39;)</span><br><span class="line">and LAST_DDL_TIME &gt;&#x3D; to_date(&#39;2020-4-11&#39;, &#39;YYYY-MM-dd&#39;)</span><br></pre></td></tr></table></figure>
 
 
       
@@ -456,8 +474,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/07/mysql%E7%AC%94%E8%AE%B0/" rel="prev" title="mysql笔记">
-                <i class="fa fa-chevron-left"></i> mysql笔记
+              <a href="/2019/12/07/docker%E7%AC%94%E8%AE%B0/" rel="prev" title="docker笔记">
+                <i class="fa fa-chevron-left"></i> docker笔记
               </a>
             
           </div>
@@ -465,6 +483,10 @@
         <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/07/linux%E4%B9%8Bmanjaro%E7%AC%94%E8%AE%B0/" rel="next" title="linux之manjaro笔记">
+                linux之manjaro笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -544,7 +566,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -557,7 +579,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -600,7 +622,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在A字段相同的情况下，取B最大-或最小-的"><span class="nav-number">1.</span> <span class="nav-text">在A字段相同的情况下，取B最大(或最小)的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#A字段不为null取A，A为null则取出B"><span class="nav-number">2.</span> <span class="nav-text">A字段不为null取A，A为null则取出B</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建序列"><span class="nav-number">3.</span> <span class="nav-text">创建序列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后台分页的写法"><span class="nav-number">4.</span> <span class="nav-text">后台分页的写法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL优化"><span class="nav-number">5.</span> <span class="nav-text">SQL优化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在A字段相同的情况下，取B最大-或最小-的"><span class="nav-number">1.</span> <span class="nav-text">在A字段相同的情况下，取B最大(或最小)的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#A字段不为null取A，A为null则取出B"><span class="nav-number">2.</span> <span class="nav-text">A字段不为null取A，A为null则取出B</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建序列"><span class="nav-number">3.</span> <span class="nav-text">创建序列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后台分页的写法"><span class="nav-number">4.</span> <span class="nav-text">后台分页的写法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL优化"><span class="nav-number">5.</span> <span class="nav-text">SQL优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查询锁和解除锁"><span class="nav-number">6.</span> <span class="nav-text">查询锁和解除锁</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建全局的临时表"><span class="nav-number">7.</span> <span class="nav-text">创建全局的临时表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#检查数据库里的所有存储过程"><span class="nav-number">8.</span> <span class="nav-text">检查数据库里的所有存储过程</span></a></li></ol></div>
             
 
           </div>
@@ -620,7 +642,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -641,7 +663,7 @@
     
       <span class="post-meta-item-text">全站共&#58;</span>
     
-    <span title="Site words total count">5.4k</span>字
+    <span title="Site words total count">14.8k</span>字
   
         
 
@@ -799,7 +821,7 @@
 
 
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/valine/1.4.14/Valine.min.js"></script>
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];

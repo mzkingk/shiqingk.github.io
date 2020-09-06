@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="这可能是最好用的jQuery表格插件了，配置非常全面，甚至还可以自定义，但是教程太零散，所以我记录的也很零散，都是使用频率非常高的一些配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="datatable笔记">
+<meta property="og:url" content="http://yoursite.com/2020/06/01/datatable%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="小白随笔">
+<meta property="og:description" content="这可能是最好用的jQuery表格插件了，配置非常全面，甚至还可以自定义，但是教程太零散，所以我记录的也很零散，都是使用频率非常高的一些配置">
+<meta property="article:published_time" content="2020-06-01T02:03:20.000Z">
+<meta property="article:modified_time" content="2020-09-06T06:06:50.774Z">
+<meta property="article:author" content="某清">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/06/01/datatable笔记/"/>
+
+
+
+
+
+  <title>datatable笔记 | 小白随笔</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小白随笔</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/01/datatable%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="某清">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小白随笔">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">datatable笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-01T10:03:20+08:00">
+                2020-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/06/01/datatable%E7%AC%94%E8%AE%B0/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/06/01/datatable%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这可能是最好用的jQuery表格插件了，配置非常全面，甚至还可以自定义，但是教程太零散，所以我记录的也很零散，都是使用频率非常高的一些配置</p>
+<a id="more"></a>
+
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var _dt&#x3D;$(&quot;#table&quot;).DataTable(&#123;&#125;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 是否允许翻页，设成false，翻页按钮不显示</span><br><span class="line">paging:false,</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;页面长度</span><br><span class="line">pageLength: 25,</span><br><span class="line">lengthChange:true,</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;scrollCollapse: true,  &#x2F;&#x2F;表格高度随内容自适应</span><br></pre></td></tr></table></figure>
+<p><strong>config配置</strong></p>
+<table>
+<thead>
+<tr>
+<th>支持排序</th>
+<th>ordering: true,</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>默认排序方式</td>
+<td>order: [[0, “desc”]],</td>
+<td></td>
+</tr>
+<tr>
+<td>默认页长</td>
+<td>pageLength: 25,</td>
+<td></td>
+</tr>
+<tr>
+<td>后台分页</td>
+<td>serverSide: true,</td>
+<td></td>
+</tr>
+<tr>
+<td>允许翻页</td>
+<td>paging: true,</td>
+<td></td>
+</tr>
+<tr>
+<td>后台url</td>
+<td>ajax: (data, callback, settings) =&gt;dao.DetailsQuery(data, callback)</td>
+<td>返回的数据格式必须是{recordsFiltered: 765,recordsTotal: 765,data:[]}</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>序号列</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">data</span>:<span class="literal">null</span>,<span class="attr">render</span>:<span class="function">(<span class="params">data,type,full,meta</span>)=&gt;</span>meta.row+<span class="number">1</span>+meta.settings._iDisplayStart &#125;,</span><br></pre></td></tr></table></figure>
+
+<p><strong>columns参数</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>隐藏某列</strong></td>
+<td>visible: false</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>不允许点击这列排序</strong></td>
+<td>orderable: false</td>
+<td></td>
+</tr>
+<tr>
+<td>重写HTML显示内容</td>
+<td>render:(data,t,row)=&gt;{}</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>单选多选</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">select: &#123;</span><br><span class="line">    style:&#39;Multiple&#39;,&#x2F;&#x2F;single表示单选</span><br><span class="line">    selector:&#39;td:first-child&#39;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">selector   点击第一列选中，不填这句则点击任一列选中</span><br></pre></td></tr></table></figure>
+<p><strong>支持checkbox</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;,(如果不生效，可能是缺少样式css，可自己写一个，或引入datatables.select.css)</span><br><span class="line">columns: [&#123; width: &#39;20&#39;, className: &#39;select-checkbox&#39; &#125;,]</span><br></pre></td></tr></table></figure>
+
+<p><strong>绘制指定数据</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">_dt.rows.add(tbData).draw();</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;清空重绘</span><br><span class="line">_leftDT.clear().rows.add(list).draw(false);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;动态更新某一条</span><br><span class="line">_bottomDTB.row(index).data(row).draw(false);</span><br></pre></td></tr></table></figure>
+
+<p><strong>获取选中数据</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;获取选中的单行用 &#123;selected: true&#125;</span><br><span class="line">var row &#x3D; _dt.row(&#123;selected:true&#125;).data();</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;获取选中的多行用  &#39;.selected&#39;</span><br><span class="line">var rows &#x3D; _dt.rows(&#39;.selected&#39;).data();</span><br></pre></td></tr></table></figure>
+<p><strong>获取所有数据</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var rows &#x3D; new $.fn.dataTable.Api(&#39;#table&#39;).rows().data();</span><br><span class="line"></span><br><span class="line">var rows &#x3D; $(&#39;#table&#39;).DataTable().data();</span><br></pre></td></tr></table></figure>
+
+<p><strong>选中指定数据</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;list是table中数据的下标数组</span><br><span class="line">_dt.rows(list).select();</span><br></pre></td></tr></table></figure>
+
+<p><strong>移除选中数据</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;移除选中的单行</span><br><span class="line">_dt.row(&#123;selected:true&#125;).remove().draw(false);</span><br><span class="line">&#x2F;&#x2F;移除选中的多行</span><br><span class="line">_dt.rows(&#39;.selected&#39;).remove().draw(false);</span><br><span class="line">&#x2F;&#x2F;移除所有数据</span><br><span class="line">_dt.rows().remove().draw(false);</span><br><span class="line"></span><br><span class="line">清除所有数据</span><br><span class="line">_dt.clear().draw();</span><br></pre></td></tr></table></figure>
+<p><strong>点击某字段触发事件</strong></p>
+<p>1，render中，给行加上class</p>
+<p>2，drawCallback中，绑定class的点击事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	title: &quot;调整&quot;, data: &quot;aaa&quot;, width: &#39;60&#39;, className: &#39;align-left&#39;, </span><br><span class="line">	defaultContent: &#39;&#39;, render: function () &#123;</span><br><span class="line">		return &#39;&lt;a href&#x3D;&quot;javascript:void(0)&quot; class&#x3D;&quot;aaa&quot;&gt;调整&lt;&#x2F;a&gt;&#39;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>点击某行后移除这行数据</strong></p>
+<p>这种写法只是从html移除，datatable对象里其实还在</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">drawCallback: function () &#123;</span><br><span class="line">	$(&#39;.aaa&#39;).off().on(&#39;click&#39;, function (e) &#123;</span><br><span class="line">    	$(e.target).parents(&#39;tr&#39;).remove();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>获取点击的行的数据</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">drawCallback: function () &#123;</span><br><span class="line">	$(&#39;.aaa&#39;).off().on(&#39;click&#39;, function (e) &#123;</span><br><span class="line">    	var tr &#x3D; $(e.target).closest(&#39;tr&#39;);</span><br><span class="line">		var row &#x3D; _dt.row(tr).data();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>点击某行-数据变化</strong></p>
+<p>点击id为5的行后，给该行增加一个class</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fnCreatedRow: function (row, data, index) &#123;</span><br><span class="line">	if (data[&#39;id&#39;] &#x3D;&#x3D; 5) &#123;</span><br><span class="line">		$(row).addClass(&#39;row_alert&#39;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>导出datatable中的数据</strong></p>
+<p>前提：定义datatable的时候，添加buttons字段，内容如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">buttons: [&#123;</span><br><span class="line">    extend: &#39;excel&#39;,</span><br><span class="line">    text: false,</span><br><span class="line">    filename: &#39;导出文件&#39;,</span><br><span class="line">    exportOptions: &#123;</span><br><span class="line">        modifier: &#123;</span><br><span class="line">            page: &#39;all&#39;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;]</span><br><span class="line">dom: &#39;&lt;&quot;#jxszExport&quot;B&gt;frtlp&#39;,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">text: false表示界面上不显示导出按钮，如果设置成text: &#39;导出&#39;这种，则在界面会出现一个文字为导出的a标签</span><br><span class="line">exportOptions中自定义导出规则，&#39;all&#39;表示导出所有，&#39;.selected&#39;表示只导出选中的数据</span><br></pre></td></tr></table></figure>
+<p>然后，界面上任意位置，自定义按钮，把它绑定到导出的点击动作即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;#jxszExport .buttons-excel&#39;).trigger(&#39;click&#39;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>已知某一字段，找datatable中的位置</strong></p>
+<p>单选用row多选rows</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let index &#x3D; _leftDT.row((idx, data) &#x3D;&gt; (data.FID &#x3D;&#x3D;&#x3D; basic.FID)).index();</span><br></pre></td></tr></table></figure>
+
+<p><strong>更新指定某一条数据</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_leftDT.row(index).data(row).draw(false);</span><br></pre></td></tr></table></figure>
+
+<p><strong>动态编辑行内数据</strong></p>
+<p>可以给多列做不同的配置，参考<a href="https://www.cnblogs.com/GaiaBing/p/9317702.html" target="_blank" rel="noopener">https://www.cnblogs.com/GaiaBing/p/9317702.html</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">columns: [&#123; <span class="attr">title</span>: <span class="string">'分配数量'</span>, <span class="attr">data</span>: <span class="string">'F_NUM'</span>&#125;],</span><br><span class="line">columnDefs: [&#123;</span><br><span class="line">    targets: [<span class="number">0</span>],<span class="comment">/*列序号*/</span></span><br><span class="line">    createdCell: <span class="function"><span class="keyword">function</span> (<span class="params">cell, cellData, rowData, rowIndex, colIndex</span>) </span>&#123;</span><br><span class="line">        $(cell).on(<span class="string">"blur"</span>, <span class="string">":input"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> text = $(<span class="keyword">this</span>).val();</span><br><span class="line">            _dt.cell(cell).data(text);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;],</span><br></pre></td></tr></table></figure>
+
+<p><strong>动态编辑行内选择框内容</strong></p>
+<p>核心配置如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> createCombox = <span class="function"><span class="keyword">function</span> (<span class="params">array,thisData,className</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> _html = <span class="string">'&lt;select class="uk-width-1-1 '</span>+className+<span class="string">'"&gt;'</span>;</span><br><span class="line">    array.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">ele, index</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (ele.name == thisData) &#123;</span><br><span class="line">            _html += <span class="string">'&lt;option selected&gt;'</span> + ele.name + <span class="string">'&lt;/option&gt;'</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            _html += <span class="string">'&lt;option&gt;'</span> + ele.name + <span class="string">'&lt;/option&gt;'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    _html += <span class="string">'&lt;/select&gt;'</span>;</span><br><span class="line">    <span class="keyword">return</span> _html;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> _data = [</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">'A'</span>&#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">'B'</span>&#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">'C'</span>&#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">columns:[</span><br><span class="line">    &#123; <span class="attr">title</span>: <span class="string">"字母"</span>, <span class="attr">data</span>: <span class="string">"Word"</span>, <span class="attr">render</span>: <span class="function">(<span class="params">data</span>) =&gt;</span> createCombox(_data, data, <span class="string">'cabin'</span>) &#125;,</span><br><span class="line">],</span><br><span class="line">drawCallback: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//改变事件</span></span><br><span class="line">    $(<span class="string">'.cabin'</span>).off().on(<span class="string">'change'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">        e.stopPropagation();</span><br><span class="line">        <span class="keyword">var</span> text = $(<span class="keyword">this</span>).find(<span class="string">"option:selected"</span>).text();</span><br><span class="line">        <span class="keyword">let</span> rowObj = _detailTable.row($(<span class="keyword">this</span>).closest(<span class="string">'tr'</span>));</span><br><span class="line">        <span class="keyword">let</span> row = $.extend(<span class="literal">true</span>, &#123;&#125;, rowObj.data());</span><br><span class="line">        <span class="keyword">if</span> (!row.Word || row.Word == text) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        row.F_CABIN = text;</span><br><span class="line">        _detailTable.row(rowObj.index()).data(row).draw(<span class="literal">false</span>);</span><br><span class="line">        $.showTips(<span class="string">'修改成功'</span>, <span class="number">1</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="datatable后台分页"><a href="#datatable后台分页" class="headerlink" title="datatable后台分页"></a>datatable后台分页</h2><p>重点是两个参数：serverSide和ajax</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var _dt &#x3D; $(&#39;#dt_main&#39;).DataTable(&#123;</span><br><span class="line">	ajax: function (data, callback, settings) &#123;</span><br><span class="line">		dao.getData(callback, data);</span><br><span class="line">	&#125;,</span><br><span class="line">	serverSide: true,</span><br><span class="line">	lengthChange: true</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="datatable配置-增加全选checkbox"><a href="#datatable配置-增加全选checkbox" class="headerlink" title="datatable配置-增加全选checkbox"></a>datatable配置-增加全选checkbox</h1><p>首先，在全局的js中添加以下内容</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GenerateSelectionBox</span>(<span class="params">opts</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ysTH = $(<span class="string">'#'</span> + opts.DefaultID).closest(<span class="string">'div.dataTables_scroll'</span>).find(<span class="string">'.dataTables_scrollHead'</span>).find(<span class="string">'table thead tr:nth-child(1) th:nth-child(1)'</span>);</span><br><span class="line">    ysTH.html(<span class="string">''</span>);</span><br><span class="line">    <span class="keyword">var</span> slth = $(<span class="string">'#'</span> + opts.DefaultID + <span class="string">' thead tr:nth-child(1) th:nth-child(1)'</span>);</span><br><span class="line">    slth.html(<span class="string">''</span>);</span><br><span class="line">    <span class="comment">//设置id</span></span><br><span class="line">    <span class="keyword">var</span> checkid = opts.DefaultID + <span class="string">'_checkbox'</span>;</span><br><span class="line">    <span class="keyword">var</span> html = []</span><br><span class="line">    html.push(<span class="string">'&lt;div class="dataTables_sizing" style=""&gt;&lt;div class="squaredFour"&gt;'</span>);</span><br><span class="line">    html.push(<span class="string">'&lt;input type="checkbox"   value="None" id="'</span> + checkid + <span class="string">'" name="check" /&gt;'</span>)</span><br><span class="line">    html.push(<span class="string">'&lt;label for="'</span> + checkid + <span class="string">'"&gt;&lt;/label&gt;'</span>);</span><br><span class="line">    html.push(<span class="string">'&lt;/div&gt;&lt;/div&gt;'</span>);</span><br><span class="line">    <span class="keyword">var</span> $searcher = $(html.join(<span class="string">"\r\n"</span>));</span><br><span class="line">    slth.append($searcher);</span><br><span class="line">    ysTH.append($searcher);</span><br><span class="line">    <span class="comment">//绑定单击事件</span></span><br><span class="line">    $(<span class="string">"#"</span> + checkid).bind(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//判断是否选中</span></span><br><span class="line">        <span class="keyword">if</span> ($(<span class="string">"#"</span> + checkid).is(<span class="string">':checked'</span>) == <span class="literal">true</span>) &#123;</span><br><span class="line">            $(<span class="string">"#"</span> + opts.DefaultID).DataTable().rows().select();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            $(<span class="string">"#"</span> + opts.DefaultID).DataTable().rows().deselect();</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;);</span><br><span class="line">    $(<span class="string">"#"</span> + opts.DefaultID).DataTable().on(<span class="string">'deselect'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e, dt, type, indexes</span>) </span>&#123;</span><br><span class="line">        $(<span class="string">'#'</span> + checkid).removeAttr(<span class="string">'checked'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> checkid;</span><br><span class="line">&#125;;</span><br><span class="line">$.fn.datacheckbox = <span class="function"><span class="keyword">function</span> (<span class="params">options</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//传递参数</span></span><br><span class="line">    <span class="keyword">return</span> GenerateSelectionBox(options);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>然后，在实例化的datatable的回调函数中，调用该方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">drawCallback: <span class="function"><span class="keyword">function</span> (<span class="params">settings</span>) </span>&#123;</span><br><span class="line">    $.fn.datacheckbox(&#123; <span class="attr">DefaultID</span>: <span class="string">'mainTable'</span> &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="jQuery动态修改datatable高度"><a href="#jQuery动态修改datatable高度" class="headerlink" title="jQuery动态修改datatable高度"></a>jQuery动态修改datatable高度</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;#layerImport&#39;).find(&#39;.dataTables_scrollBody&#39;).css(&#39;height&#39;, h);</span><br></pre></td></tr></table></figure>
+
+<h1 id="在指定行下面插入一条数据"><a href="#在指定行下面插入一条数据" class="headerlink" title="在指定行下面插入一条数据"></a>在指定行下面插入一条数据</h1><p>这段代码，未充分测试</p>
+<p>在datatable默认配置中加入这句，或者是在初始化dt之前加入这个方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$.fn.dataTable.Api.register(<span class="string">'row.addByPos()'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data, index</span>) </span>&#123;     </span><br><span class="line">    <span class="keyword">var</span> currentPage = <span class="keyword">this</span>.page();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//insert the row  </span></span><br><span class="line">    <span class="keyword">this</span>.row.add(data);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//move added row to desired index</span></span><br><span class="line">    <span class="keyword">var</span> rowCount = <span class="keyword">this</span>.data().length<span class="number">-1</span>,</span><br><span class="line">        insertedRow = <span class="keyword">this</span>.row(rowCount).data(),</span><br><span class="line">        tempRow;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i=rowCount;i&gt;=index;i--) &#123;</span><br><span class="line">        tempRow = <span class="keyword">this</span>.row(i<span class="number">-1</span>).data();</span><br><span class="line">        <span class="keyword">this</span>.row(i).data(tempRow);</span><br><span class="line">        <span class="keyword">this</span>.row(i<span class="number">-1</span>).data(insertedRow);</span><br><span class="line">    &#125;     </span><br><span class="line"></span><br><span class="line">    <span class="comment">//refresh the current page</span></span><br><span class="line">    <span class="keyword">this</span>.page(currentPage).draw(<span class="literal">false</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>使用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> table = $(<span class="string">"#example"</span>).DataTable();</span><br><span class="line">table.row.addByPos([data], <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+<p>原理比较简单，冒泡法，先把数据插入到末尾但不绘制，然后将数据从末尾冒泡移动到index的位置</p>
+<p><strong>search()</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#searchFilter"</span>).off().bind(<span class="string">"input propertychange"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> txt = <span class="keyword">this</span>.value;</span><br><span class="line">    _leftDT.search(txt).draw();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>重新渲染列宽?</strong></p>
+<p>网上查到的解决方案都是这个，但感觉没有什么用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this_DT.columns.adjust();</span><br></pre></td></tr></table></figure>
+
+<h1 id="自动更新layer弹窗里的table高度"><a href="#自动更新layer弹窗里的table高度" class="headerlink" title="自动更新layer弹窗里的table高度"></a>自动更新layer弹窗里的table高度</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">success: <span class="function"><span class="keyword">function</span> (<span class="params">$dom</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> lastTime = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</span><br><span class="line">    <span class="keyword">let</span> hChange = <span class="function">(<span class="params">thisTime</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (thisTime - lastTime &lt; <span class="number">500</span>) <span class="keyword">return</span>;</span><br><span class="line">        lastTime = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</span><br><span class="line">        $dom.find(<span class="string">'.dataTables_scrollBody'</span>).css(<span class="string">'height'</span>, $dom.height() - <span class="number">240</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    hChange(lastTime + <span class="number">1000</span>);</span><br><span class="line">    $dom.find(<span class="string">'.layui-layer-resize,.layui-layer-btn'</span>).on(<span class="string">'mouseout'</span>, () =&gt; hChange(<span class="keyword">new</span> <span class="built_in">Date</span>().getTime()));</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h1 id="动态绘制某行背景色"><a href="#动态绘制某行背景色" class="headerlink" title="动态绘制某行背景色"></a>动态绘制某行背景色</h1><p>例如，在某行变化时，背景色改变</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">createdRow: <span class="function"><span class="keyword">function</span>(<span class="params"> nRow, aData, iDataIndex </span>) </span>&#123; </span><br><span class="line">    <span class="keyword">if</span> (aData.change) &#123;</span><br><span class="line">        $(nRow).addClass(<span class="string">'red'</span>);</span><br><span class="line">    &#125; </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      <!-- 文件位置：~/blog/themes/next/layout/_macro/post.swig -->
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/09/06/dotnet%20core%E5%88%A9%E7%94%A8cors%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/" rel="prev" title="dotnet core利用cors解决跨域问题">
+                <i class="fa fa-chevron-left"></i> dotnet core利用cors解决跨域问题
+              </a>
+            
+          </div>
+
+        <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/06/01/dotnet%20webapi%20%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7/" rel="next" title="dotnet webapi 全局异常捕获">
+                dotnet webapi 全局异常捕获 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">某清</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shiqingk" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置"><span class="nav-number">1.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#datatable后台分页"><span class="nav-number">1.1.</span> <span class="nav-text">datatable后台分页</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#datatable配置-增加全选checkbox"><span class="nav-number">2.</span> <span class="nav-text">datatable配置-增加全选checkbox</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jQuery动态修改datatable高度"><span class="nav-number">3.</span> <span class="nav-text">jQuery动态修改datatable高度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在指定行下面插入一条数据"><span class="nav-number">4.</span> <span class="nav-text">在指定行下面插入一条数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自动更新layer弹窗里的table高度"><span class="nav-number">5.</span> <span class="nav-text">自动更新layer弹窗里的table高度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动态绘制某行背景色"><span class="nav-number">6.</span> <span class="nav-text">动态绘制某行背景色</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">某清</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">全站共&#58;</span>
+    
+    <span title="Site words total count">14.8k</span>字
+  
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/valine/1.4.14/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'bNSR5frcMdrsenYpkLmVm745-gzGzoHsz',
+        appKey: '2gf37mb3hqNkwmCIxCJEyQp3',
+        placeholder: 'ヾﾉ≧∀≦)o 来呀！快活呀！~',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"left","width":250,"height":500},"mobile":{"show":true},"log":false});</script></body>
+</html>

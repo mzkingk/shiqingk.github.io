@@ -86,15 +86,16 @@
 
 
 
-<meta name="description" content="group by报错问题，修改配置文件永久生效先输入这句查一下select @@sql_mode 把查到的结果，去掉ONLY_FULL_GROUP_BY字段后，剩下部分复制，配置到mysqld的配置文件里面去（这个配置文件可以用grep -rn bind-address &#x2F;etc命令查找到） 1[mysqld] 2sql_mode&amp;#x3D;’STRICT_TRANS_TABLES,NO_ZERO">
-<meta name="keywords" content="数据库">
+<meta name="description" content="虽然大部分工作时间都在写Oracle，但是开源免费的MySQL也得会用…..">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql笔记">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;07&#x2F;mysql%E7%AC%94%E8%AE%B0&#x2F;index.html">
+<meta property="og:url" content="http://yoursite.com/2019/12/07/mysql%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="小白随笔">
-<meta property="og:description" content="group by报错问题，修改配置文件永久生效先输入这句查一下select @@sql_mode 把查到的结果，去掉ONLY_FULL_GROUP_BY字段后，剩下部分复制，配置到mysqld的配置文件里面去（这个配置文件可以用grep -rn bind-address &#x2F;etc命令查找到） 1[mysqld] 2sql_mode&amp;#x3D;’STRICT_TRANS_TABLES,NO_ZERO">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-10T13:30:26.214Z">
+<meta property="og:description" content="虽然大部分工作时间都在写Oracle，但是开源免费的MySQL也得会用…..">
+<meta property="article:published_time" content="2019-12-07T08:29:20.000Z">
+<meta property="article:modified_time" content="2020-09-06T06:01:32.634Z">
+<meta property="article:author" content="某清">
+<meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
 
 
@@ -141,7 +142,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -329,7 +330,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  311
+                  371
                 </span>
               
 
@@ -366,21 +367,29 @@
       
 
       
-        <h1 id="group-by报错问题，修改配置文件永久生效"><a href="#group-by报错问题，修改配置文件永久生效" class="headerlink" title="group by报错问题，修改配置文件永久生效"></a>group by报错问题，修改配置文件永久生效</h1><p>先输入这句查一下<br>select @@sql_mode</p>
+        <p>虽然大部分工作时间都在写Oracle，但是开源免费的MySQL也得会用…..</p>
+<a id="more"></a>
+
+<h1 id="group-by报错问题，修改配置文件永久生效"><a href="#group-by报错问题，修改配置文件永久生效" class="headerlink" title="group by报错问题，修改配置文件永久生效"></a>group by报错问题，修改配置文件永久生效</h1><p>先输入这句查一下<br>select @@sql_mode</p>
 <p>把查到的结果，去掉ONLY_FULL_GROUP_BY字段后，剩下部分复制，配置到mysqld的配置文件里面去（这个配置文件可以用grep -rn bind-address /etc命令查找到）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[mysqld] </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">sql_mode&#x3D;’STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION’</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[mysqld] </span><br><span class="line">sql_mode&#x3D;’STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION’</span><br></pre></td></tr></table></figure>
 <p>然后，重启mysql服务！</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo service mysql restart</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service mysql restart</span><br></pre></td></tr></table></figure>
 <h1 id="修改表的字符集"><a href="#修改表的字符集" class="headerlink" title="修改表的字符集"></a>修改表的字符集</h1><p>修改数据库的<br>ALTER DATABASE <code>testdb</code> DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;<br>修改表的<br>ALTER TABLE novel_check DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;</p>
-<h1 id="远程访问"><a href="#远程访问" class="headerlink" title="远程访问"></a>远程访问</h1><p>mysql 5.7.21 的配置文件路径在/etc/mysql/mysql.conf.d/mysqld.cnf<br>注释掉bind-address那一行</p>
-<h1 id="修改用户权限"><a href="#修改用户权限" class="headerlink" title="修改用户权限"></a>修改用户权限</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">GRANT ALL PRIVILEGES ON *.* TO &#39;root&#39;@&#39;%&#39; IDENTIFIED BY &#39;admin&#39; WITH GRANT OPTION;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">flush privileges;</span></pre></td></tr></table></figure>
-<h1 id="备份sql"><a href="#备份sql" class="headerlink" title="备份sql"></a>备份sql</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mysqldump -h 127.0.0.1 -uroot -p chamber_book --set-gtid-purged&#x3D;OFF &gt; db.sql</span></pre></td></tr></table></figure>
+<h1 id="远程访问"><a href="#远程访问" class="headerlink" title="远程访问"></a>远程访问</h1><p>ubuntu中，mysql 5.7.21 的配置文件路径在/etc/mysql/mysql.conf.d/mysqld.cnf<br>注释掉bind-address那一行</p>
+<h1 id="修改用户权限"><a href="#修改用户权限" class="headerlink" title="修改用户权限"></a>修改用户权限</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL PRIVILEGES ON *.* TO &#39;root&#39;@&#39;%&#39; IDENTIFIED BY &#39;admin&#39; WITH GRANT OPTION;</span><br><span class="line"></span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+<h1 id="备份sql"><a href="#备份sql" class="headerlink" title="备份sql"></a>备份sql</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -h 127.0.0.1 -uroot -p chamber_book --set-gtid-purged&#x3D;OFF &gt; db.sql</span><br></pre></td></tr></table></figure>
 <h1 id="自增"><a href="#自增" class="headerlink" title="自增"></a>自增</h1><p>1 以前没主键</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#96;table&#96; ADD PRIMARY KEY(&#96;id&#96;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#96;table&#96; CHANGE &#96;id&#96; &#96;id&#96; INT(11) NOT NULL AUTO_INCREMENT;</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#96;table&#96; ADD PRIMARY KEY(&#96;id&#96;);</span><br><span class="line">ALTER TABLE &#96;table&#96; CHANGE &#96;id&#96; &#96;id&#96; INT(11) NOT NULL AUTO_INCREMENT;</span><br></pre></td></tr></table></figure>
 <p>2.以前有主键的话</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#96;table&#96; DROP PRIMARY KEY, ADD PRIMARY KEY(&#96;id&#96;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#96;table&#96; CHANGE &#96;id&#96; &#96;id&#96; INT(11) NOT NULL AUTO_INCREMENT;</span></pre></td></tr></table></figure>
-<h1 id="修改列名"><a href="#修改列名" class="headerlink" title="修改列名"></a>修改列名</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">alter table t_meeting_room change column room_no roomno VARCHAR(50);</span></pre></td></tr></table></figure>
-<h1 id="执行sql文件"><a href="#执行sql文件" class="headerlink" title="执行sql文件"></a>执行sql文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mysql -u root -p dbname&lt;&#x2F;home&#x2F;root&#x2F;news.sql</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#96;table&#96; DROP PRIMARY KEY, ADD PRIMARY KEY(&#96;id&#96;);</span><br><span class="line">ALTER TABLE &#96;table&#96; CHANGE &#96;id&#96; &#96;id&#96; INT(11) NOT NULL AUTO_INCREMENT;</span><br></pre></td></tr></table></figure>
+<h1 id="修改列名"><a href="#修改列名" class="headerlink" title="修改列名"></a>修改列名</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table t_meeting_room change column room_no roomno VARCHAR(50);</span><br></pre></td></tr></table></figure>
+<h1 id="执行sql文件"><a href="#执行sql文件" class="headerlink" title="执行sql文件"></a>执行sql文件</h1><p>方案一，shell命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p dbname&lt;&#x2F;home&#x2F;root&#x2F;news.sql</span><br></pre></td></tr></table></figure>
+<p>方案二，先登录再执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;source &#x2F;home&#x2F;hello.sql</span><br></pre></td></tr></table></figure>
+
+<h1 id="显示所有数据库"><a href="#显示所有数据库" class="headerlink" title="显示所有数据库"></a>显示所有数据库</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -414,8 +423,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/07/docker%E7%AC%94%E8%AE%B0/" rel="prev" title="docker笔记">
-                <i class="fa fa-chevron-left"></i> docker笔记
+              <a href="/2019/12/07/linux%E4%B9%8Bmanjaro%E7%AC%94%E8%AE%B0/" rel="prev" title="linux之manjaro笔记">
+                <i class="fa fa-chevron-left"></i> linux之manjaro笔记
               </a>
             
           </div>
@@ -423,10 +432,6 @@
         <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/12/07/oracle%E7%AC%94%E8%AE%B0/" rel="next" title="oracle笔记">
-                oracle笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -506,7 +511,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -519,7 +524,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -562,7 +567,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#group-by报错问题，修改配置文件永久生效"><span class="nav-number">1.</span> <span class="nav-text">group by报错问题，修改配置文件永久生效</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改表的字符集"><span class="nav-number">2.</span> <span class="nav-text">修改表的字符集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程访问"><span class="nav-number">3.</span> <span class="nav-text">远程访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改用户权限"><span class="nav-number">4.</span> <span class="nav-text">修改用户权限</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#备份sql"><span class="nav-number">5.</span> <span class="nav-text">备份sql</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自增"><span class="nav-number">6.</span> <span class="nav-text">自增</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改列名"><span class="nav-number">7.</span> <span class="nav-text">修改列名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#执行sql文件"><span class="nav-number">8.</span> <span class="nav-text">执行sql文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#group-by报错问题，修改配置文件永久生效"><span class="nav-number">1.</span> <span class="nav-text">group by报错问题，修改配置文件永久生效</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改表的字符集"><span class="nav-number">2.</span> <span class="nav-text">修改表的字符集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程访问"><span class="nav-number">3.</span> <span class="nav-text">远程访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改用户权限"><span class="nav-number">4.</span> <span class="nav-text">修改用户权限</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#备份sql"><span class="nav-number">5.</span> <span class="nav-text">备份sql</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自增"><span class="nav-number">6.</span> <span class="nav-text">自增</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改列名"><span class="nav-number">7.</span> <span class="nav-text">修改列名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#执行sql文件"><span class="nav-number">8.</span> <span class="nav-text">执行sql文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示所有数据库"><span class="nav-number">9.</span> <span class="nav-text">显示所有数据库</span></a></li></ol></div>
             
 
           </div>
@@ -582,7 +587,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -603,7 +608,7 @@
     
       <span class="post-meta-item-text">全站共&#58;</span>
     
-    <span title="Site words total count">5.4k</span>字
+    <span title="Site words total count">14.8k</span>字
   
         
 
@@ -761,7 +766,7 @@
 
 
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/valine/1.4.14/Valine.min.js"></script>
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
